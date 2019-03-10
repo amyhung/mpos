@@ -17,7 +17,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @MapperScan(basePackages = SlaveDataSourceConfiguration.Package, sqlSessionFactoryRef = "slaveSqlSessionFactory")
 public class SlaveDataSourceConfiguration {
 
-	static final String Package = "com.tgl.pos.dao.mapper.slave";
+	static final String Package = "com.tgl.mpos.dao.mapper.slave";
 
 	static final String MAPPER_LOCATION = "classpath:mybatis/mapper/slave/*.xml";
 

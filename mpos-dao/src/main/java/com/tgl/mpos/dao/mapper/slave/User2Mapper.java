@@ -1,10 +1,10 @@
-package com.tgl.mpos.dao.mapper;
+package com.tgl.mpos.dao.mapper.slave;
 
 import java.util.List;
 
 import com.tgl.mpos.dao.entities.UserEntity;
 
-public interface UserMapper {
+public interface User2Mapper {
 
 	List<UserEntity> getAll();
 
