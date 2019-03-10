@@ -1,0 +1,12 @@
+# Author: Amy Hung
+
+# Spring Boot will check for the presence of a META-INF/spring.factories file within published jar
+# Locating auto configuration classes below
+# If there are more then one class, you can do it as below
+#
+# com.tgl.mpos.service.configure.app1Configuration,\
+# com.tgl.mpos.service.configure.app2Configuration
+
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.tgl.mpos.service.configure.ServiceRegisterAutoConfiguration

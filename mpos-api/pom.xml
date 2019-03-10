@@ -14,7 +14,7 @@
 	<artifactId>mpos-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mpos-api</name>
-	<packaging>war</packaging><!-- 如果要用內建的 tomcat 跑，這裡設 jar or war 都 OK -->
+	<packaging>jar</packaging><!-- 如果要用內建的 tomcat 跑，這裡設 jar or war 都 OK -->
 	<description>mPOS API Layer project for Spring Boot</description>
 
 	<properties>
@@ -30,19 +30,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<!-- 如果不想跑內建的 tomcat 把這裡註解掉 -->
-			<exclusions>
+<!-- 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 
-		<dependency>
+<!-- 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -71,12 +71,12 @@
 
 			<!-- This is needed so Wildfly can run a Java 10 application. -->
 			<!-- See https://jira.spring.io/browse/SPR-16990 -->
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<!-- <configuration> <archive> <manifestEntries> <Dependencies>jdk.unsupported</Dependencies> 
-					</manifestEntries> </archive> </configuration> -->
-			</plugin>
+				<configuration> <archive> <manifestEntries> <Dependencies>jdk.unsupported</Dependencies> 
+					</manifestEntries> </archive> </configuration>
+			</plugin> -->
 
 			<!-- OPTIONAL: Remove this plugin to reduce the WAR file size. It's not 
 				needed to deploy in an external application server. -->

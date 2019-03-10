@@ -3,10 +3,9 @@ package com.tgl.mpos.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BookService {
+public interface BookService {
 
-	public String getBookList() {
-		return "getBookList";
-	}
+	public String getBookList();
 
 }
+
