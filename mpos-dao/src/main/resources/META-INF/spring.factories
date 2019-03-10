@@ -10,4 +10,5 @@
 
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.tgl.mpos.dao.configure.DaoRegisterAutoConfiguration,\
-com.tgl.mpos.dao.configure.SlaveDataSourceConfiguration
+com.tgl.mpos.dao.configure.SlaveDataSourceConfiguration,\
+com.tgl.mpos.dao.configure.MasterDataSourceConfiguration
