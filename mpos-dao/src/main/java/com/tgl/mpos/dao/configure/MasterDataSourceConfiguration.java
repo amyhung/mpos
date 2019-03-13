@@ -13,8 +13,19 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-@Configuration
-@MapperScan(basePackages = MasterDataSourceConfiguration.Package, sqlSessionFactoryRef = "masterDataSourceConfiguration")
+/**
+ * Configure your master database with mybatis.
+ * If you have more then one database and want to use mybatis also, 
+ * you can  create a class like this.
+ * 
+ * 如果有二個以上的 db 要採用 mybatis 時，必須要宣告兩個類別並各自設定，不能只針對第二個 DB 才去建立此類別
+ * 因為當有兩個以上的 db 時，Spring Boot 目前不會去載入 app.properties 裡的 mybatis 設定
+ * 
+ * @author amyhung
+ *
+ */
+//@Configuration
+//@MapperScan(basePackages = MasterDataSourceConfiguration.Package, sqlSessionFactoryRef = "masterDataSourceConfiguration")
 public class MasterDataSourceConfiguration {
 
 	static final String Package = "com.tgl.mpos.dao.mapper.master";

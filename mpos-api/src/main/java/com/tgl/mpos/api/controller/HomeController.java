@@ -9,8 +9,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tgl.mpos.dao.entities.UserEntity;
-import com.tgl.mpos.dao.mapper.master.UserMapper;
+import com.tgl.mpos.dao.model.UserEntity;
+import com.tgl.mpos.dao.mapper.UserMapper;
 import com.tgl.mpos.dao.mapper.slave.User2Mapper;
 import com.tgl.mpos.service.BookService;
 
@@ -24,7 +24,7 @@ public class HomeController {
 	@Autowired
 	private UserMapper userMapper;
 
-	@Autowired
+//	@Autowired
 	private User2Mapper userMapper2;
 
 	@Autowired

@@ -13,8 +13,16 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-@Configuration
-@MapperScan(basePackages = SlaveDataSourceConfiguration.Package, sqlSessionFactoryRef = "slaveSqlSessionFactory")
+/**
+ * Configure your second database with mybatis.
+ * If you have more then one database and want to use mybatis also, 
+ * you can  create a class like this.
+ * 
+ * @author amyhung
+ *
+ */
+//@Configuration
+//@MapperScan(basePackages = SlaveDataSourceConfiguration.Package, sqlSessionFactoryRef = "slaveSqlSessionFactory")
 public class SlaveDataSourceConfiguration {
 
 	static final String Package = "com.tgl.mpos.dao.mapper.slave";
@@ -55,7 +63,6 @@ public class SlaveDataSourceConfiguration {
 		sessionFactoryBean.setDataSource(slaveDataSource);
 		sessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
 				.getResources(SlaveDataSourceConfiguration.MAPPER_LOCATION));
-		//sessionFactoryBean.setConfigLocation("");
 		return sessionFactoryBean.getObject();
 	}
 

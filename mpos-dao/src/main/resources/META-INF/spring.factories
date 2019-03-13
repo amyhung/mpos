@@ -5,10 +5,8 @@
 # If there are more then one class, you can do it as below
 #
 # com.tgl.mpos.service.configure.app1Configuration,\
-# com.tgl.mpos.service.configure.app2Configuration
-
+# com.tgl.mpos.dao.configure.SlaveDataSourceConfiguration,\
+# com.tgl.mpos.dao.configure.MasterDataSourceConfiguration
 
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.tgl.mpos.dao.configure.DaoRegisterAutoConfiguration,\
-com.tgl.mpos.dao.configure.SlaveDataSourceConfiguration,\
-com.tgl.mpos.dao.configure.MasterDataSourceConfiguration
+com.tgl.mpos.dao.configure.DaoRegisterAutoConfiguration

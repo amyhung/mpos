@@ -1,8 +1,8 @@
-package com.tgl.mpos.dao.mapper.master;
+package com.tgl.mpos.dao.mapper;
 
 import java.util.List;
 
-import com.tgl.mpos.dao.entities.UserEntity;
+import com.tgl.mpos.dao.model.UserEntity;
 
 public interface UserMapper {
 

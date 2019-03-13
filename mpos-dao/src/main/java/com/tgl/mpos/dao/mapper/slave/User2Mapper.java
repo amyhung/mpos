@@ -2,7 +2,7 @@ package com.tgl.mpos.dao.mapper.slave;
 
 import java.util.List;
 
-import com.tgl.mpos.dao.entities.UserEntity;
+import com.tgl.mpos.dao.model.UserEntity;
 
 public interface User2Mapper {
 

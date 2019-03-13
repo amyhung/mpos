@@ -1,4 +1,4 @@
-package com.tgl.mpos.dao.entities;
+package com.tgl.mpos.dao.model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
