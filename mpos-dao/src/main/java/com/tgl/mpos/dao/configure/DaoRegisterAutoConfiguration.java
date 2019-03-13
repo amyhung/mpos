@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:/META-INF/app.properties")
+@PropertySource("classpath:/com/tgl/mpos/dao/configure/app.properties")
 //@ComponentScan(basePackages = { "com.tgl.mpos.dao" })
 @MapperScan("com.tgl.mpos.dao.mapper")
 public class DaoRegisterAutoConfiguration {

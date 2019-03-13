@@ -9,7 +9,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tgl.mpos.dao.model.CodeItemDef;
 import com.tgl.mpos.dao.model.UserEntity;
+import com.tgl.mpos.dao.mapper.CodeItemDefMapper;
 import com.tgl.mpos.dao.mapper.UserMapper;
 import com.tgl.mpos.dao.mapper.slave.User2Mapper;
 import com.tgl.mpos.service.BookService;
@@ -24,7 +26,10 @@ public class HomeController {
 	@Autowired
 	private UserMapper userMapper;
 
-//	@Autowired
+	@Autowired
+	private CodeItemDefMapper codeMapper;
+
+	// @Autowired
 	private User2Mapper userMapper2;
 
 	@Autowired
@@ -47,6 +52,24 @@ public class HomeController {
 
 		return "Hello Amy! , env is " + env.getProperty("app.env.info");
 
+	}
+
+//	@GetMapping("/name")
+//	public String name() {
+//
+//		UserEntity user = userMapper.getByName("Leo");
+//		System.out.println("user name is " + user.getUserName());
+//		return user.getNickName();
+//
+//	}
+//
+	@GetMapping("/code")
+	public String user(String code) {
+		if (code == null || code == "") {
+			code = "COUGH";
+		}
+		CodeItemDef codeObj = codeMapper.getByCode(code);
+		return codeObj.getItemDesc();
 	}
 
 	@GetMapping("/user")
