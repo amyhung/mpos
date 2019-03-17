@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = { "com.tgl.mpos.dao" })
+@ComponentScan(basePackages = { "com.tgl.mpos.dao.jdbc" })
 @MapperScan("com.tgl.mpos.dao.mapper")
 public class DaoRegisterAutoConfiguration {
 
