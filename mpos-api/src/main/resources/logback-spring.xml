@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<property scope="context" name="log.pattern" value="%d [%t] %-5p [%c:%L] %marker - %m%n" />
+	<property name="logs" value="logs" />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs}/system.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logs}/system-%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ### 特別指定各 package 要寫 log 的等級 ### -->
+	<!-- <logger name="com.tgl.mpos" level="error" additivity="false"> <appender-ref ref="console" /> <appender-ref ref="rollingFile" 
+		/> </logger> -->
+
+	<!-- LOG "com.tgl.mpos.dao.mapper*" at TRACE level, TRACE will show sql -->
+	<!-- 正式環境要關掉 -->
+	<logger name="com.tgl.mpos.dao.mapper" level="trace" additivity="false">
+		<appender-ref ref="rollingFile" />
+		<appender-ref ref="console" />
+	</logger>
+
+	<logger name="java.sql.Statement" additivity="true">
+		<level value="debug" />
+	</logger>
+
+	<!-- ### End ### -->
+
+	<!-- root logger LOG everything at INFO level -->
+	<!-- 除了上述有特別指定 package 各自的 log level 外，其它的 log level 都為 INFO -->
+	<!-- PS: 正式環境要設為 error -->
+	<root level="info">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile" />
+	</root>
+
+</configuration>
