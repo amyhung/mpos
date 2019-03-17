@@ -23,6 +23,7 @@
 		<module>mpos-dao</module>
 		<module>mpos-security</module>
 		<module>mpos-service</module>
+		<module>mpos-common</module>
 	</modules>
 
 	<properties>
