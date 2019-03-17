@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tgl.mpos.dao.model.CodeItemDef;
 import com.tgl.mpos.dao.model.UserEntity;
+import com.tgl.mpos.dao.common.DAOException;
+import com.tgl.mpos.dao.jdbc.UsersDao;
 //import com.tgl.mpos.dao.mapper.CodeItemDefMapper;
 import com.tgl.mpos.dao.mapper.UserMapper;
 import com.tgl.mpos.dao.mapper.slave.User2Mapper;
@@ -38,6 +40,9 @@ public class HomeController {
 
 	// @Autowired
 	// private User2Mapper userMapper2;
+	
+	@Autowired
+	private UsersDao daoUsers;
 
 	@Autowired
 	private Environment env;
@@ -47,6 +52,14 @@ public class HomeController {
 
 	// @Value("${jar.info}")
 	// private String jar_info;
+	
+	@GetMapping("/dao")
+	public String dao() {
+		
+		UserEntity entity = daoUsers.getUser(1);
+		return entity.getNickName();
+		
+	}
 
 	@GetMapping("/home")
 	public String index() {
