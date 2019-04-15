@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -24,25 +23,16 @@
 	</properties>
 
 	<dependencies>
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
-			</dependency> -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<!-- 如果不想跑內建的 tomcat 把這裡註解掉 -->
-			<!-- <exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions> -->
+			<!-- <exclusions> <exclusion> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
+				</exclusion> </exclusions> -->
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency> -->
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId> <scope>provided</scope> </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,10 +44,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> 
-			<scope>test</scope> </dependency> -->
-		<!-- <dependency> <groupId>com.tgl</groupId> <artifactId>mpos-security</artifactId> 
-			<version>0.0.1-SNAPSHOT</version> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> <scope>test</scope> 
+			</dependency> -->
+		<!-- <dependency> <groupId>com.tgl</groupId> <artifactId>mpos-security</artifactId> <version>0.0.1-SNAPSHOT</version> </dependency> -->
 		<dependency>
 			<groupId>com.tgl</groupId>
 			<artifactId>mpos-service</artifactId>
@@ -71,36 +68,19 @@
 
 			<!-- This is needed so Wildfly can run a Java 10 application. -->
 			<!-- See https://jira.spring.io/browse/SPR-16990 -->
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration> <archive> <manifestEntries> <Dependencies>jdk.unsupported</Dependencies> 
-					</manifestEntries> </archive> </configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> <configuration> <archive> 
+				<manifestEntries> <Dependencies>jdk.unsupported</Dependencies> </manifestEntries> </archive> </configuration> </plugin> -->
 
-			<!-- OPTIONAL: Remove this plugin to reduce the WAR file size. It's not 
-				needed to deploy in an external application server. -->
+			<!-- OPTIONAL: Remove this plugin to reduce the WAR file size. It's not needed to deploy in an external application server. -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.8</version>
-				<configuration>
-					<wtpversion>2.0</wtpversion>
-					<sourceExcludes>
-						<sourceExclude>**/.git/</sourceExclude>
-					</sourceExcludes>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-					<additionalProjectnatures>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-eclipse-plugin</artifactId> <version>2.8</version> 
+				<configuration> <wtpversion>2.0</wtpversion> <sourceExcludes> <sourceExclude>**/.git/</sourceExclude> </sourceExcludes> <downloadSources>true</downloadSources> 
+				<downloadJavadocs>false</downloadJavadocs> <additionalProjectnatures> <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature> 
+				</additionalProjectnatures> </configuration> </plugin> -->
 
 		</plugins>
 
